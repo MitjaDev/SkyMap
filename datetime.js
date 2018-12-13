@@ -1,17 +1,3 @@
-/*
-   New Perspectives on HTML and CSS
-   Tutorial 10
-   Case Problem 1
-
-   Function List:
-   showDate
-      Used to return a text string containing the current date and time.
-   getMap
-      Used to the determine the current sky map number to display with the online planisphere
-
-*/
-
-
 function showDateTime() {
    var thisDate = new Date();
    var thisWDay=thisDate.getDay();
