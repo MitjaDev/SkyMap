@@ -1,84 +1,4 @@
-/*!
- * Modernizr JavaScript library 1.5
- * http://www.modernizr.com/
- *
- * Copyright (c) 2009-2010 Faruk Ates - http://farukat.es/
- * Dual-licensed under the BSD and MIT licenses.
- * http://www.modernizr.com/license/
- *
- * Featuring major contributions by
- * Paul Irish  - http://paulirish.com
- */
 
-/*
- * LicenseModernizr is available under the MIT and BSD licenses:
-
- * MIT License
- * Copyright (c) 2009–2010 Faruk Ate?
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
-
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
-
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
-
- * BSD License
- * Copyright (c) 2010, Faruk Ate?
- * All rights reserved.
-
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- * * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- * * Redistributions in binary form must reproduce the above copyright
- * notice, this list of conditions and the following disclaimer in the
- * documentation and/or other materials provided with the distribution.
- *  * Neither the name of the Organization nor the
- *  names of its contributors may be used to endorse or promote products
- *  derived from this software without specific prior written permission.
-
- *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- *  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- *  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- *  DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDER BE LIABLE FOR ANY
- *  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- *  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- *  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
- 
-/*
- * Modernizr is a script that will detect native CSS3 and HTML5 features
- * available in the current UA and provide an object containing all
- * features with a true/false value, depending on whether the UA has
- * native support for it or not.
- * 
- * In addition to that, Modernizr will add classes to the <html>
- * element of the page, one for each cutting-edge feature. If the UA
- * supports it, a class like "cssgradients" will be added. If not,
- * the class name will be "no-cssgradients". This allows for simple
- * if-conditionals in CSS styling, making it easily to have fine
- * control over the look and feel of your website.
- * 
- * @author        Faruk Ates
- * @copyright     (c) 2009-2010 Faruk Ates.
- *
- * @contributor   Paul Irish
- * @contributor   Ben Alman
- */
 
 window.Modernizr = (function(window,doc,undefined){
     
@@ -87,43 +7,43 @@ window.Modernizr = (function(window,doc,undefined){
     ret = {},
 
     /**
-     * enableHTML5 is a private property for advanced use only. If enabled,
-     * it will make Modernizr.init() run through a brief while() loop in
-     * which it will create all HTML5 elements in the DOM to allow for
-     * styling them in Internet Explorer, which does not recognize any
-     * non-HTML4 elements unless created in the DOM this way.
-     * 
-     * enableHTML5 is ON by default.
+      enableHTML5 is a private property for advanced use only. If enabled,
+      it will make Modernizr.init() run through a brief while() loop in
+      which it will create all HTML5 elements in the DOM to allow for
+      styling them in Internet Explorer, which does not recognize any
+      non-HTML4 elements unless created in the DOM this way.
+      
+      enableHTML5 is ON by default.
      */
     enableHTML5 = true,
     
     
     /**
-     * fontfaceCheckDelay is the ms delay before the @font-face test is
-     * checked a second time. This is neccessary because both Gecko and
-     * WebKit do not load data: URI font data synchronously.
-     *   https://bugzilla.mozilla.org/show_bug.cgi?id=512566
-     * The check will be done again at fontfaceCheckDelay*2 and then 
-     * a fourth time at window's load event. 
-     * If you need to query for @font-face support, send a callback to: 
-     *  Modernizr._fontfaceready(fn);
-     * The callback is passed the boolean value of Modernizr.fontface
+      fontfaceCheckDelay is the ms delay before the @font-face test is
+      checked a second time. This is neccessary because both Gecko and
+      WebKit do not load data: URI font data synchronously.
+      https://bugzilla.mozilla.org/show_bug.cgi?id=512566
+      The check will be done again at fontfaceCheckDelay*2 and then 
+      a fourth time at window's load event. 
+      If you need to query for @font-face support, send a callback to: 
+      Modernizr._fontfaceready(fn);
+      The callback is passed the boolean value of Modernizr.fontface
      */
     fontfaceCheckDelay = 75,
     
     
     docElement = doc.documentElement,
 
-    /**
-     * Create our "modernizr" element that we do most feature tests on.
-     */
+    /*
+      Create our "modernizr" element that we do most feature tests on.
+    */
     mod = 'modernizr',
     m = doc.createElement( mod ),
     m_style = m.style,
 
-    /**
-     * Create the input element for various Web Forms feature tests.
-     */
+    /*
+      Create the input element for various Web Forms feature tests.
+    */
     f = doc.createElement( 'input' ),
     
     // Reused strings, stored here to allow better minification
@@ -189,10 +109,10 @@ window.Modernizr = (function(window,doc,undefined){
     
     classes = [],
     
-    /**
-      * isEventSupported determines if a given element supports the given event
-      * function from http://yura.thinkweb2.com/isEventSupported/
-      */
+    /*
+       isEventSupported determines if a given element supports the given event
+       function from http://yura.thinkweb2.com/isEventSupported/
+    */
     isEventSupported = (function(){
   
         var TAGNAMES = {
@@ -242,32 +162,32 @@ window.Modernizr = (function(window,doc,undefined){
       };
     }
     
-    /**
-     * set_css applies given styles to the Modernizr DOM node.
-     */
+    /*
+     set_css applies given styles to the Modernizr DOM node.
+    */
     function set_css( str ) {
         m_style.cssText = str;
     }
 
-    /**
-     * set_css_all extrapolates all vendor-specific css strings.
-     */
+    /*
+      set_css_all extrapolates all vendor-specific css strings.
+    */
     function set_css_all( str1, str2 ) {
         return set_css(prefixes.join(str1 + ';') + ( str2 || '' ));
     }
 
-    /**
-     * contains returns a boolean for if substr is found within str.
-     */
+    /*
+      contains returns a boolean for if substr is found within str.
+    */
     function contains( str, substr ) {
         return (''+str).indexOf( substr ) !== -1;
     }
 
-    /**
-     * test_props is a generic CSS / DOM property test; if a browser supports
-     *   a certain property, it won't return undefined for it.
-     *   A supported CSS property returns empty string when its not yet set.
-     */
+    /*
+      test_props is a generic CSS / DOM property test; if a browser supports
+      a certain property, it won't return undefined for it.
+      A supported CSS property returns empty string when its not yet set.
+    */
     function test_props( props, callback ) {
         for ( var i in props ) {
             if ( m_style[ props[i] ] !== undefined && ( !callback || callback( props[i], m ) ) ) {
@@ -276,12 +196,12 @@ window.Modernizr = (function(window,doc,undefined){
         }
     }
 
-    /**
-     * test_props_all tests a list of DOM properties we want to check against.
-     *   We specify literally ALL possible (known and/or likely) properties on 
-     *   the element including the non-vendor prefixed one, for forward-
-     *   compatibility.
-     */
+    /*
+      test_props_all tests a list of DOM properties we want to check against.
+      We specify literally ALL possible (known and/or likely) properties on 
+      the element including the non-vendor prefixed one, for forward-
+      compatibility.
+    */
     function test_props_all( prop, callback ) {
         var uc_prop = prop.charAt(0).toUpperCase() + prop.substr(1),
         
@@ -306,9 +226,9 @@ window.Modernizr = (function(window,doc,undefined){
     }
     
 
-    /**
-     * Tests
-     */
+    /*
+     Tests
+    */
      
     tests[canvas] = function() {
         return !!doc.createElement( canvas ).getContext;
@@ -318,17 +238,17 @@ window.Modernizr = (function(window,doc,undefined){
         return !!(tests[canvas]() && typeof doc.createElement( canvas ).getContext('2d').fillText == 'function');
     };
     
-    /**
-     * The Modernizr.touch test only indicates if the browser supports
-     *    touch events, which does not necessarily reflect a touchscreen
-     *    device, as evidenced by tablets running Windows 7 or, alas,
-     *    the Palm Pre / WebOS (touch) phones.
-     * Additionally, chrome used to lie about its support on this, but that 
-     *    has since been recitifed: http://crbug.com/36415
-     * Because there is no way to reliably detect Chrome's false positive 
-     *    without UA sniffing we have removed this test from Modernizr. We 
-     *    hope to add it in after Chrome 5 has been sunsetted. 
-     * See also http://github.com/Modernizr/Modernizr/issues#issue/84
+    /*
+      The Modernizr.touch test only indicates if the browser supports
+      touch events, which does not necessarily reflect a touchscreen
+      device, as evidenced by tablets running Windows 7 or, alas,
+      the Palm Pre / WebOS (touch) phones.
+      Additionally, chrome used to lie about its support on this, but that 
+      has since been recitifed: http://crbug.com/36415
+      Because there is no way to reliably detect Chrome's false positive 
+      without UA sniffing we have removed this test from Modernizr. We 
+      hope to add it in after Chrome 5 has been sunsetted. 
+      See also http://github.com/Modernizr/Modernizr/issues#issue/84
      
     tests[touch] = function() {
 
@@ -337,14 +257,14 @@ window.Modernizr = (function(window,doc,undefined){
     };
     */
 
-    /**
-     * geolocation tests for the new Geolocation API specification.
-     *   This test is a standards compliant-only test; for more complete
-     *   testing, including a Google Gears fallback, please see:
-     *   http://code.google.com/p/geo-location-javascript/
-     * or view a fallback solution using google's geo API:
-     *   http://gist.github.com/366184
-     */
+    /*
+      geolocation tests for the new Geolocation API specification.
+      This test is a standards compliant-only test; for more complete
+      testing, including a Google Gears fallback, please see:
+      http://code.google.com/p/geo-location-javascript/
+      or view a fallback solution using google's geo API:
+      http://gist.github.com/366184
+    */
     tests[geolocation] = function() {
         return !!navigator.geolocation;
     };
@@ -489,14 +409,6 @@ window.Modernizr = (function(window,doc,undefined){
     
     
     tests[cssgradients] = function() {
-        /**
-         * For CSS Gradients syntax, please see:
-         * http://webkit.org/blog/175/introducing-css-gradients/
-         * https://developer.mozilla.org/en/CSS/-moz-linear-gradient
-         * https://developer.mozilla.org/en/CSS/-moz-radial-gradient
-         * http://dev.w3.org/csswg/css3-images/#gradients-
-         */
-        
         var str1 = background + '-image:',
             str2 = 'gradient(linear,left top,right bottom,from(#9f9),to(white));',
             str3 = 'linear-gradient(left top,#9f9, white);';
@@ -628,13 +540,6 @@ window.Modernizr = (function(window,doc,undefined){
 
     // These tests evaluate support of the video/audio elements, as well as
     // testing what types of content they support.
-    //
-    // we're using the Boolean constructor here, so that we can extend the value
-    // e.g.  Modernizr.video     // true
-    //       Modernizr.video.ogg // 'probably'
-    //
-    // codec values from : http://github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
-    //                     thx to NielsLeenheer and zcorpan
     
     tests[video] = function() {
         var elem = doc.createElement(video),
@@ -658,26 +563,11 @@ window.Modernizr = (function(window,doc,undefined){
             bool.ogg  = elem[canPlayType]('audio/ogg; codecs="vorbis"');
             bool.mp3  = elem[canPlayType]('audio/mpeg;');
             
-            // mimetypes accepted: 
-            //   https://developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_video_elements
-            //   http://bit.ly/iphoneoscodecs
             bool.wav  = elem[canPlayType]('audio/wav; codecs="1"');
             bool.m4a  = elem[canPlayType]('audio/x-m4a;') || elem[canPlayType]('audio/aac;');
         }
         return bool;
     };
-
-
-    // both localStorage and sessionStorage are
-    // tested in this method because otherwise Firefox will
-    //   throw an error: https://bugzilla.mozilla.org/show_bug.cgi?id=365772
-    // if cookies are disabled
-    
-    // FWIW miller device resolves to [object Storage] in all supporting browsers
-    //   except for IE who does [object Object]
-    
-    // IE8 Compat mode supports these features completely:
-    //   http://www.quirksmode.org/dom/html5.html
     
     tests[localstorage] = function() {
         return ('localStorage' in window) && window[localstorage] !== null;
@@ -725,12 +615,6 @@ window.Modernizr = (function(window,doc,undefined){
     // hold this guy to execute in a moment.
     function webforms(){
     
-        // Run through HTML5's new input attributes to see if the UA understands any.
-        // We're using f which is the <input> element created early on
-        // Mike Taylr has created a comprehensive resource for testing these attributes
-        //   when applied to all input types: 
-        //   http://miketaylr.com/code/input-type-attr.html
-        // spec: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
         ret[input] = (function(props) {
             for (var i = 0,len=props.length;i<len;i++) {
                 attrs[ props[i] ] = !!(props[i] in f);
@@ -738,12 +622,6 @@ window.Modernizr = (function(window,doc,undefined){
             return attrs;
         })('autocomplete autofocus list placeholder max min multiple pattern required step'.split(' '));
 
-        // Run through HTML5's new input types to see if the UA understands any.
-        //   This is put behind the tests runloop because it doesn't return a
-        //   true/false like all the other tests; instead, it returns an object
-        //   containing each input type with its corresponding true/false value 
-        
-        // Big thx to @miketaylr for the html5 forms expertise. http://miketaylr.com/
         ret[inputtypes] = (function(props) {
             for (var i = 0,bool,len=props.length;i<len;i++) {
                 f.setAttribute('type', props[i]);
@@ -806,13 +684,13 @@ window.Modernizr = (function(window,doc,undefined){
 
 
 
-    /**
-     * Addtest allows the user to define their own feature tests
-     * the result will be added onto the Modernizr object,
-     * as well as an appropriate className set on the html element
-     * 
-     * @param feature - String naming the feature
-     * @param test - Function returning true if feature is supported, false if not
+    /*
+      Addtest allows the user to define their own feature tests
+      the result will be added onto the Modernizr object,
+      as well as an appropriate className set on the html element
+      
+      @param feature - String naming the feature
+      @param test - Function returning true if feature is supported, false if not
      */
     ret.addTest = function (feature, test) {
       feature = feature.toLowerCase();
@@ -826,9 +704,9 @@ window.Modernizr = (function(window,doc,undefined){
       return ret; // allow chaining.
     };
 
-    /**
-     * Reset m.style.cssText to nothing to reduce memory footprint.
-     */
+    /*
+      Reset m.style.cssText to nothing to reduce memory footprint.
+    */
     set_css( '' );
     m = f = null;
 
@@ -838,7 +716,6 @@ window.Modernizr = (function(window,doc,undefined){
     if ( enableHTML5 && (function(){ var elem = doc.createElement("div");
                                       elem.innerHTML = "<elem></elem>";
                                       return elem.childNodes.length !== 1; })()) {
-        // iepp v1.5.1 MIT @jon_neal  http://code.google.com/p/ie-print-protector/
         (function(p,e){function q(a,b){if(g[a])g[a].styleSheet.cssText+=b;else{var c=r[l],d=e[j]("style");d.media=a;c.insertBefore(d,c[l]);g[a]=d;q(a,b)}}function s(a,b){for(var c=new RegExp("\\b("+m+")\\b(?!.*[;}])","gi"),d=function(k){return".iepp_"+k},h=-1;++h<a.length;){b=a[h].media||b;s(a[h].imports,b);q(b,a[h].cssText.replace(c,d))}}function t(){for(var a,b=e.getElementsByTagName("*"),c,d,h=new RegExp("^"+m+"$","i"),k=-1;++k<b.length;)if((a=b[k])&&(d=a.nodeName.match(h))){c=new RegExp("^\\s*<"+d+"(.*)\\/"+d+">\\s*$","i");i.innerHTML=a.outerHTML.replace(/\r|\n/g," ").replace(c,a.currentStyle.display=="block"?"<div$1/div>":"<span$1/span>");c=i.childNodes[0];c.className+=" iepp_"+d;c=f[f.length]=[a,c];a.parentNode.replaceChild(c[1],c[0])}s(e.styleSheets,"all")}function u(){for(var a=-1,b;++a<f.length;)f[a][1].parentNode.replaceChild(f[a][0],f[a][1]);for(b in g)r[l].removeChild(g[b]);g={};f=[]}for(var r=e.documentElement,i=e.createDocumentFragment(),g={},m="abbr|article|aside|audio|canvas|command|datalist|details|figure|figcaption|footer|header|hgroup|keygen|mark|meter|nav|output|progress|section|source|summary|time|video",n=m.split("|"),f=[],o=-1,l="firstChild",j="createElement";++o<n.length;){e[j](n[o]);i[j](n[o])}i=i.appendChild(e[j]("div"));p.attachEvent("onbeforeprint",t);p.attachEvent("onafterprint",u)})(this,doc);
     }
 
